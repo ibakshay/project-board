@@ -21,8 +21,7 @@ jobs:
 
     - name: Assign issues and pull requests with `bug` label to column bugs
       uses: srggrs/assign-one-project-github-action@1.2.1
-      if: |
-       contains(github.event.issue.labels.*.name, 'bug')
+      if: github.event.pull_request == 'opened'
       with:
         project: 'https://github.com/ibakshay/project-board/projects/1'
-        column_name: 'bugs'
+        column_name: 'review'
