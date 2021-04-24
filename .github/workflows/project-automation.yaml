@@ -13,12 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Assign to One Project
     steps:
-    - name: Assign NEW issues and NEW pull requests to project 1
-      uses: srggrs/assign-one-project-github-action@1.2.1
-   #   if: github.event.action == 'opened'
-      if: github.event.pull_request == 'opened'
-      with:
-        project: 'https://github.com/ibakshay/project-board/projects/1'
+  #  - name: Assign NEW issues and NEW pull requests to project 1
+   #   uses: srggrs/assign-one-project-github-action@1.2.1
+    #  if: github.event == 'opened'
+     # with:
+      #  project: 'https://github.com/ibakshay/project-board/projects/1'
+     - name: echo 
+       run: |
+        echo "${{ github}}"
 
   #  - name: Assign issues and pull requests with `bug` label to column bugs
    #   uses: srggrs/assign-one-project-github-action@1.2.1
