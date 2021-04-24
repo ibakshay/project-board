@@ -21,14 +21,9 @@ jobs:
       if: github.event_name == 'issues' && github.event.action == 'opened'
       with:
         project: 'https://github.com/ibakshay/project-board/projects/1'
-        column_name: 'bugs'
-  #   - name: echo 
-    #   run: |
-      #  echo "${{ github.event_name}}"
-
     - name: Assign NEW pull requests to column review
       uses: srggrs/assign-one-project-github-action@1.2.1
-      if: github.event_name == 'pull_request' && github.event == 'opened'
+      if: github.event_name == 'pull_request' && github.event.action == 'opened'
       with:
         project: 'https://github.com/ibakshay/project-board/projects/1'
-        column_name: 'review'
+        column_name: 'code review'
