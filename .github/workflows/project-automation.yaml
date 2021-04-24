@@ -19,10 +19,10 @@ jobs:
       with:
         project: 'https://github.com/ibakshay/project-board/projects/1'
 
-   # - name: Assign issues and pull requests with `bug` label to project 3
-    #  uses: srggrs/assign-one-project-github-action@1.2.1
-     # if: |
-      # contains(github.event.issue.labels.*.name, 'bug')
-     # with:
-      #  project: 'https://github.com/ibakshay/project-board/projects/1'
-      #  column_name: 'Labeled'
+    - name: Assign issues and pull requests with `bug` label to column bugs
+      uses: srggrs/assign-one-project-github-action@1.2.1
+      if: |
+       contains(github.event.issue.labels.*.name, 'bug')
+      with:
+        project: 'https://github.com/ibakshay/project-board/projects/1'
+        column_name: 'bugs'
