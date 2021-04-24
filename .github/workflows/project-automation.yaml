@@ -18,7 +18,7 @@ jobs:
         echo "${{ github.event_name}}"
     - name: Assign NEW issues to column to do
       uses: srggrs/assign-one-project-github-action@1.2.1
-      if: github.event_name == 'issues' && github.event == 'opened'
+      if: github.event_name == 'issues'
       with:
         project: 'https://github.com/ibakshay/project-board/projects/1'
   #   - name: echo 
